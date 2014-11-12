@@ -1,0 +1,27 @@
+{
+  "name": "get-contact-from-module-name",
+  "version": "1.0.0",
+  "description": "Gets a list of maintainers and emails",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/lab/bin/lab test/index.js"
+  },
+  "keywords": [
+    "npm",
+    "email",
+    "contacts",
+    "module"
+  ],
+  "author": "^lift security",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^0.9.0",
+    "jshint": "^2.5.8",
+    "silent-npm-registry-client": "0.0.1"
+  },
+  "devDependencies": {
+    "code": "^1.2.1",
+    "lab": "^5.0.2",
+    "precommit-hook": "^1.0.7"
+  }
+}
