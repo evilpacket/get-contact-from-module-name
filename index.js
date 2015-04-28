@@ -1,13 +1,18 @@
-var RegClient = require('silent-npm-registry-client');
-var os = require('os');
+var Registry = require('npm-stats');
+var _ = require('lodash');
 
-var client = new RegClient({
-  registry: 'http://registry.npmjs.org/',
-  cache: os.tmpDir() + '/' + Math.random().toString(16).slice(2)
-});
+var Contacts = function (config) {
+    this.defaults = {
+        url: 'https://skimdb.npmjs.com/'
+    };
 
-module.exports = function (module, callback) {
-    client.get('/' + module, function (err, pkg) {
+    _.defaults(this.defaults, config);
+    
+    this.registry = Registry(this.defaults.url, this.defaults.options);
+};
+
+Contacts.prototype.get = function (module, callback) {
+    this.registry.module(module).info(function (err, pkg) {
         if (err) {
             return callback(err);
         }
@@ -18,3 +23,5 @@ module.exports = function (module, callback) {
     });
 };
 
+
+module.exports = Contacts;

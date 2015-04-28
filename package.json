@@ -1,7 +1,7 @@
 {
-  "name": "get-contact-from-module-name",
-  "version": "1.0.0",
-  "description": "Gets a list of maintainers and emails",
+  "name": "get-maintainers",
+  "version": "1.1.0",
+  "description": "Gets a list of maintainers and emails based on a module name",
   "main": "index.js",
   "scripts": {
     "test": "node_modules/lab/bin/lab test/index.js"
@@ -16,12 +16,13 @@
   "license": "ISC",
   "dependencies": {
     "async": "^0.9.0",
-    "jshint": "^2.5.8",
-    "silent-npm-registry-client": "0.0.1"
+    "jshint": "^2.7.0",
+    "lodash": "^3.7.0",
+    "npm-stats": "^1.1.0"
   },
   "devDependencies": {
-    "code": "^1.2.1",
-    "lab": "^5.0.2",
-    "precommit-hook": "^1.0.7"
+    "code": "^1.4.0",
+    "lab": "^5.8.0",
+    "precommit-hook": "^2.0.1"
   }
 }
